@@ -225,8 +225,12 @@
     self.datePicker.countDownDuration = countDownDuration;
   }
 
-   [self.datePicker setValue:[UIColor blackColor] forKey:@"textColor"];
-  [self.datePicker setValue:@(false) forKey:@"highlightsToday"];
+  if (@available(iOS 14, *)) {
+  }
+  else {
+      [self.datePicker setValue:[UIColor blackColor] forKey:@"textColor"];
+      [self.datePicker setValue:@(false) forKey:@"highlightsToday"];
+  }
 
   if (locale) {
     [self.datePicker setLocale:locale];
